@@ -153,3 +153,8 @@ async def reset_context():
         return {"status": "success", "message": "Context has been reset."}
     except Exception as e:
         return {"status": "error", "message": str(e)}
+
+# Create health check endpoint
+@app.get("/")
+async def health_check():
+    return {"status": "success", "message": "OK"}
